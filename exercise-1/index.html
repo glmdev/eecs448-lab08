@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EECS 448 - Lab 8 - Exercise 1</title>
+</head>
+<body>
+    <div id="display" style="font-weight: bold; margin-bottom: 10px;"></div>
+    <div class="fields">
+        <input id="input-pw" type="password" placeholder="Enter password">
+        <input id="verify-pw" type="password" placeholder="Confirm password">
+        <button id="check-pw">Validate</button>
+    </div>
+
+    <script src="../js/shared.js"></script>
+    <script>
+        uJ.btn('#check-pw', () => {
+            if ( uJ.input('#input-pw').length < 8 ) {
+                alert('Password must be at least 8 characters long.')
+            } else if ( uJ.input('#input-pw') !== uJ.input('#verify-pw') ) {
+                alert('Password confirmation does not match.')
+            } else {
+                alert('Password is valid!')
+            }
+        })
+    </script>
+</body>
+</html>

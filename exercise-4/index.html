@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EECS 448 - Lab 8 - Exercise 4</title>
+
+    <style>
+        #para {
+            margin: 40px;
+            border-style: solid;
+            padding: 5px;
+        }
+        
+        .fields {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 100px;
+        }
+
+        .fields label, .fields button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <div class="fields">
+        <label for="border-r">Border color (red, 0-250)</label>
+        <input type="number" id="border-r">
+
+        <label for="border-g">Border color (green, 0-250)</label>
+        <input type="number" id="border-g">
+
+        <label for="border-b">Border color (blue, 0-250)</label>
+        <input type="number" id="border-b">
+
+        <label for="border-width">Border width</label>
+        <input type="number" id="border-width">
+
+        <label for="background-r">Background color (red, 0-250)</label>
+        <input type="number" id="background-r">
+
+        <label for="background-g">Background color (green, 0-250)</label>
+        <input type="number" id="background-g">
+
+        <label for="background-b">Background color (blue, 0-250)</label>
+        <input type="number" id="background-b">
+
+        <label for="background-width">Width</label>
+        <input type="number" id="background-width">
+
+        <button id="btn-apply">Apply</button>
+    </div>
+
+    <script src="../js/shared.js"></script>
+    <script>
+        const para = uJ.tag('#para')
+        const border_rgb = [uJ.tag('#border-r'), uJ.tag('#border-g'), uJ.tag('#border-b')]
+        const border_width = uJ.tag('#border-width')
+        const background_rgb = [uJ.tag('#background-r'), uJ.tag('#background-g'), uJ.tag('#background-b')]
+        const background_width = uJ.tag('#background-width')
+
+        const to_rgb = tags => `rgb(${tags.map(x => x.value || 0).join(', ')})`
+
+        uJ.btn('#btn-apply', () => {
+            para.style.borderColor = to_rgb(border_rgb)
+            para.style.borderWidth = `${border_width.value}px`
+            para.style.backgroundColor = to_rgb(background_rgb)
+            para.style.width = `${background_width.value}px`
+        })
+    </script>
+</body>
+</html>

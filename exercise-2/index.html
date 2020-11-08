@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EECS 448 - Lab 8 - Exercise 2</title>
+</head>
+<body>
+    <div class="slideshow" style="text-align: center">
+        <img id="img-src" src="img/CRW_0010.jpg" width="500" height="375">
+    </div>
+    <div class="buttons" style="text-align: center; margin-top: 20px;">
+        <button id="btn-prev">Previous</button> &nbsp; <button id="btn-next">Next</button>
+    </div>
+    <div style="text-align: center; margin-top: 60px">
+        <small>Images &copy; 2020 Garrett Mills.</small>
+    </div>
+
+    <script src="../js/shared.js"></script>
+    <script>
+        const images = ['img/CRW_0010.jpg', 'img/CRW_0022.jpg', 'img/IMG_0118.jpeg', 'img/IMG_0125.JPG', 'img/IMG_0126.JPG']
+        let current_image = 0
+
+        uJ.btn('#btn-prev', () => {
+            current_image -= 1
+            if ( current_image < 0 ) current_image = images.length - 1
+
+            uJ.tag('#img-src').src = images[current_image]
+        })
+
+        uJ.btn('#btn-next', () => {
+            current_image += 1
+            if ( current_image >= images.length ) current_image = 0
+
+            uJ.tag('#img-src').src = images[current_image]
+        })
+    </script>
+</body>
+</html>

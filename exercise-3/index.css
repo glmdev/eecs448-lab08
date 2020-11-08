@@ -1,0 +1,91 @@
+/* THEME */
+.color-darker {
+    color: #4a5458 !important;
+}
+.color-dark {
+    color: #6abea7 !important;
+}
+.color-main {
+    color: #7cffc4 !important;
+}
+.color-light {
+    color: #9ffff5 !important;
+}
+.color-lighter {
+    color: #bdfffd !important;
+}
+
+body {
+    background-image: url('./img/bkg.png');
+    background-size: cover;
+}
+
+html {
+    background-color: #4a5458;
+    color: #bdfffd;
+}
+
+.mono {
+    font-family: monospace;
+}
+
+.sans {
+    font-family: sans-serif;
+}
+
+.serif {
+    font-family: serif;
+}
+
+ul.links {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.links li {
+    display: flex;
+    padding: 10px;
+    background-color: #bdfffd;
+    color: #4a5458;
+    border-bottom: 1px solid #4a5458;
+    transition: all 0.1s linear;
+}
+
+ul.links li:hover {
+    color: #bdfffd;
+    background-color: #4a5458;
+}
+
+ul.links li a {
+    width: 100%;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 12pt;
+}
+
+/* LAYOUT */
+.container {
+    margin: 30px 60px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column.pad {
+    padding: 0 20px;
+}
+
+.mt {
+    padding-top: 20px;
+}
+
+.flex-fill {
+    flex: 1;
+}
